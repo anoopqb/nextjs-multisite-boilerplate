@@ -1,0 +1,56 @@
+name: Publish to GitHub Packages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'component-library/**'
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@anoopqb'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: |
+          cd component-library
+          pnpm install
+
+      - name: Type check
+        run: |
+          cd component-library
+          pnpm type-check
+
+      - name: Build package
+        run: |
+          cd component-library
+          pnpm build
+
+      - name: Publish to GitHub Packages
+        run: |
+          cd component-library
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
