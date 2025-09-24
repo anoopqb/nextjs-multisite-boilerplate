@@ -61,7 +61,7 @@ pnpm run publish:github
 cd component-library
 
 # Login to GitHub Packages (one-time setup)
-npm login --scope=@anoopjohn --registry=https://npm.pkg.github.com
+npm login --scope=@anoopqb --registry=https://npm.pkg.github.com
 
 # Build and publish
 npm run prepublishOnly
@@ -92,7 +92,7 @@ After publishing, you can verify the package is available:
 
 1. Go to your GitHub repository
 2. Click on the "Packages" tab
-3. You should see `@anoopjohn/component-library` listed
+3. You should see `@anoopqb/component-library` listed
 
 ## Using the Published Package
 
@@ -100,18 +100,18 @@ After publishing, you can verify the package is available:
 
 1. **Create `.npmrc` in your Next.js project root:**
    ```
-   @anoopjohn:registry=https://npm.pkg.github.com
+   @anoopqb:registry=https://npm.pkg.github.com
    //npm.pkg.github.com/:_authToken=your_github_token_here
    ```
 
 2. **Install the package:**
    ```bash
-   npm install @anoopjohn/component-library
+   npm install @anoopqb/component-library
    ```
 
 3. **Use in your components:**
    ```tsx
-   import { Button, Header } from '@anoopjohn/component-library'
+   import { Button, Header } from '@anoopqb/component-library'
    
    export default function MyPage() {
      return (
@@ -136,7 +136,7 @@ After publishing, you can verify the package is available:
 - Check that all dependencies are properly installed
 
 ### Package Not Found
-- Verify the package name matches exactly: `@anoopjohn/component-library`
+- Verify the package name matches exactly: `@anoopqb/component-library`
 - Make sure you're authenticated with GitHub Packages
 - Check that the package was published successfully
 

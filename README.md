@@ -20,7 +20,7 @@ This package is published to GitHub Packages. You'll need to configure your proj
 Create or update your `.npmrc` file in your project root:
 
 ```bash
-@anoopjohn:registry=https://npm.pkg.github.com
+@anoopqb:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 ```
 
@@ -33,11 +33,11 @@ Create or update your `.npmrc` file in your project root:
 ### Step 3: Install Package
 
 ```bash
-npm install @anoopjohn/component-library
+npm install @anoopqb/component-library
 # or
-yarn add @anoopjohn/component-library
+yarn add @anoopqb/component-library
 # or
-pnpm add @anoopjohn/component-library
+pnpm add @anoopqb/component-library
 ```
 
 ### Alternative: Using Environment Variable
@@ -46,7 +46,7 @@ For better security, use an environment variable:
 
 ```bash
 # .npmrc
-@anoopjohn:registry=https://npm.pkg.github.com
+@anoopqb:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 
 # .env.local (or set in your environment)
@@ -66,7 +66,7 @@ This component library is optimized for Next.js applications with built-in suppo
 
 ```tsx
 // app/layout.tsx
-import { Header } from '@anoopjohn/component-library'
+import { Header } from '@anoopqb/component-library'
 import './globals.css' // Make sure Tailwind CSS is imported
 
 export default function RootLayout({
@@ -95,7 +95,7 @@ export default function RootLayout({
 
 ```tsx
 // app/page.tsx
-import { Button } from '@anoopjohn/component-library'
+import { Button } from '@anoopqb/component-library'
 
 export default function HomePage() {
   return (
@@ -118,7 +118,7 @@ export default function HomePage() {
 ### Basic Import
 
 ```tsx
-import { Button, Header } from '@anoopjohn/component-library'
+import { Button, Header } from '@anoopqb/component-library'
 
 function App() {
   return (
@@ -141,7 +141,7 @@ function App() {
 ### With TypeScript
 
 ```tsx
-import { Button, Header, type ButtonProps, type HeaderProps } from '@anoopjohn/component-library'
+import { Button, Header, type ButtonProps, type HeaderProps } from '@anoopqb/component-library'
 
 const MyButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />
